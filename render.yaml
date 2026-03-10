@@ -1,0 +1,23 @@
+services:
+  # Backend - Express/Node Web Service
+  - type: web
+    name: nodeproject-backend
+    runtime: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: IMAGEKIT_PRIVATE_KEY
+        sync: false
+
+  # Frontend - Vite/React Static Site
+  - type: static
+    name: nodeproject-frontend
+    rootDir: Frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false
