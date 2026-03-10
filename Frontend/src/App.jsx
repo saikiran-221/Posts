@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navigate to='/feed' replace />} />
+          <Route path='/' element={<Navigate to='/create-post' replace />} />
           <Route path='/create-post' element={<CreatePost />} />
           <Route path='/feed' element={<Feed />} />
         </Routes>
